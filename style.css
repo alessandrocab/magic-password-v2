@@ -6,7 +6,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,14 +14,14 @@ body {
 }
 
 .container {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 3rem;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 2rem;
+  border-radius: 20px;
   text-align: center;
-  width: 95%;
+  width: 90%;
   max-width: 500px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-  animation: fadeIn 0.8s ease-in-out;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: fadeIn 1s ease-in-out;
 }
 
 h1 {
@@ -38,7 +38,7 @@ h1 {
 .input-wrapper input {
   width: 100%;
   padding: 1rem 3rem 1rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border-radius: 8px;
   border: 1px solid #aaa;
   box-sizing: border-box;
@@ -84,7 +84,7 @@ button:hover {
   color: white;
   font-size: 2rem;
   text-shadow: 2px 2px 5px black;
-  animation: fadeIn 0.8s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
   text-align: center;
   padding: 2rem;
 }
@@ -92,4 +92,15 @@ button:hover {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem;
+    font-size: 0.9rem;
+  }
+
+  .input-wrapper input {
+    font-size: 1rem;
+  }
 }
