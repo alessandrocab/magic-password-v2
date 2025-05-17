@@ -5,15 +5,14 @@ function togglePassword() {
 
 function checkPassword() {
   const input = document.getElementById("passwordInput").value.trim();
-  const errorSound = document.getElementById("errorSound");
 
   if (input === "segreto123") {
     document.getElementById("main").style.display = "none";
     document.getElementById("revealed").style.display = "flex";
+    new Audio("success.mp3").play();
   } else {
-    errorSound.currentTime = 0;
-    errorSound.play();
-    alert("❌ Combinazione errata. Ritenta!");
+    alert("Combinazione errata. Riprova.");
+    new Audio("fail.mp3").play();
   }
 }
 
