@@ -10,7 +10,7 @@ function checkPassword() {
     document.getElementById("main").style.display = "none";
     document.getElementById("revealed").style.display = "flex";
     // Pausa background
-  document.getElementById("background-audio").pause();
+  document.getElementById("background.mp3").pause();
     new Audio("success.mp3").play();
   } else {
     alert("Combinazione errata. Riprova.");
