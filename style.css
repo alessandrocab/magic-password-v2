@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
-
 body {
   margin: 0;
   padding: 0;
@@ -7,32 +5,33 @@ body {
   background-image: url('https://img.posterstore.com/zoom/wb0101-8harrypotter-thephilosophersstoneno150x70.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
+  background-attachment: fixed;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .container {
   background: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
+  padding: 3rem;
   border-radius: 16px;
   text-align: center;
-  width: 90%;
+  width: 95%;
   max-width: 500px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  animation: fadeIn 0.7s ease-in-out;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  animation: fadeIn 0.8s ease-in-out;
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 2rem;
 }
 
 .input-wrapper {
   position: relative;
+  width: 100%;
   margin-bottom: 1.5rem;
 }
 
@@ -64,12 +63,11 @@ button {
   background-color: #6a4c93;
   color: white;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: background 0.3s;
 }
 
 button:hover {
-  background-color: #59367a;
-  transform: scale(1.03);
+  background-color: #5b3b85;
 }
 
 .revealed {
@@ -91,27 +89,7 @@ button:hover {
   padding: 2rem;
 }
 
-.back-button {
-  margin-top: 30px;
-  background-color: #444;
-}
-
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.2rem;
-  }
-
-  .container {
-    padding: 1.5rem;
-  }
-
-  .input-wrapper input {
-    font-size: 1rem;
-    padding: 0.8rem 2.5rem 0.8rem 0.8rem;
-  }
 }
