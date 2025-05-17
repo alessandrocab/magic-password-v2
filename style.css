@@ -23,6 +23,7 @@ body {
   position: relative;
   animation: fadeIn 1s ease-in-out;
   backdrop-filter: blur(6px);
+  margin: 1rem auto;
 }
 
 h1 {
