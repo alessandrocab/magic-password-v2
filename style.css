@@ -52,10 +52,16 @@ h1 {
 
 .input-wrapper input:focus {
   outline: none;
-  border-color: #ffcc00;
-  box-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
-  background-color: #fffefa;
-  color: #222;
+  border-color: #ffc400;
+  box-shadow:
+    0 0 10px #ffcc00,
+    0 0 20px #ff9900,
+    inset 0 0 10px rgba(255, 255, 150, 0.3);
+  background-color: #fffbe6;
+  color: #2d1f00;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease-in-out;
 }
 
 .eye-button {
