@@ -1,4 +1,4 @@
-function togglePassword() {
+function togglePassword() { 
   const input = document.getElementById("passwordInput");
   input.type = input.type === "password" ? "text" : "password";
 }
@@ -21,3 +21,17 @@ function goBack() {
   document.getElementById("main").style.display = "block";
   document.getElementById("passwordInput").value = "";
 }
+
+// 🎧 Attiva audio di sottofondo dopo interazione
+document.addEventListener('DOMContentLoaded', () => {
+  const bgMusic = document.getElementById('bg-music');
+  
+  function enableAudio() {
+    bgMusic.play().catch((e) => {
+      console.log("Autoplay bloccato, attesa interazione");
+    });
+    document.removeEventListener('click', enableAudio);
+  }
+
+  document.addEventListener('click', enableAudio);
+});
