@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Combinazione Segreta</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Audio di sottofondo -->
+  <!-- Audio in loop -->
   <audio id="bg-music" src="background.mp3" autoplay loop></audio>
 
   <div class="container" id="main">
@@ -20,7 +21,7 @@
   </div>
 
   <div class="revealed" id="revealed" style="display: none;">
-    <div>✨ Hai scoperto il luogo segreto! ✨</div>
+    <div class="magic-text">✨ Hai scoperto il luogo segreto! ✨</div>
     <button style="margin-top: 30px;" onclick="goBack()">⬅ Torna indietro</button>
   </div>
 
