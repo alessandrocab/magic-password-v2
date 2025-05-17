@@ -29,7 +29,10 @@ function checkPassword() {
       bgMusic.volume = originalVolume;
     }, 1500);
 
-    alert("Combinazione errata. Riprova.");
+    // Mostra l'alert DOPO un leggero delay per non sovrapporsi all'audio
+    setTimeout(() => {
+      alert("Combinazione errata. Riprova.");
+    }, 300); // leggero ritardo per priorità audio
   }
 }
 
