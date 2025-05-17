@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'MedievalSharp', cursive;
+  background-image: url('https://img.posterstore.com/zoom/wb0101-8harrypotter-thephilosophersstoneno150x70.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+.eye-button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+button {
+  padding: 0.9rem 1.4rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #6a4c93;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #59367a;
+  transform: scale(1.03);
+}
+
+.revealed {
+  background-image: url('https://www.viaggiaescopri.it/wp-content/uploads/2012/10/Chiesa-di-San-Nicol%C3%B2-cosa-vedere-a-Guspini.jpg');
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 999;
+  color: white;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px black;
+  animation: fadeIn 0.8s ease-in-out;
+  text-align: center;
+  padding: 2rem;
+}
+
+.back-button {
+  margin-top: 30px;
+  background-color: #444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .input-wrapper input {
+    font-size: 1rem;
+    padding: 0.8rem 2.5rem 0.8rem 0.8rem;
+  }
+}
