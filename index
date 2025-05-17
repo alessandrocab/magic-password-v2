@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Combinazione Magica</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bgMusic" src="audio/magia_loop.mp3" autoplay loop></audio>
+  <audio id="errorSound" src="audio/errore_malefico.mp3"></audio>
+
+  <div class="container" id="main">
+    <h1>Inserisci la combinazione corretta</h1>
+    <div class="input-wrapper">
+      <input type="password" id="passwordInput" placeholder="Combinazione segreta" />
+      <button class="eye-button" onclick="togglePassword()">👁</button>
+    </div>
+    <button onclick="checkPassword()">✨ Svela il segreto</button>
+  </div>
+
+  <div class="revealed" id="revealed" style="display: none;">
+    <div>✨ Hai scoperto il luogo segreto! ✨</div>
+    <button class="back-button" onclick="goBack()">⬅ Torna indietro</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
