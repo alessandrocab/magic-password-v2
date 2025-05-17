@@ -9,6 +9,8 @@ function checkPassword() {
   if (input === "segreto123") {
     document.getElementById("main").style.display = "none";
     document.getElementById("revealed").style.display = "flex";
+    // Pausa background
+  document.getElementById("background-audio").pause();
     new Audio("success.mp3").play();
   } else {
     alert("Combinazione errata. Riprova.");
