@@ -2,13 +2,15 @@ function togglePassword() {
   const input = document.getElementById("passwordInput");
   input.type = input.type === "password" ? "text" : "password";
 }
+
 function showCustomAlert() {
-  document.getElementById("custom-alert").classList.remove("hidden");
+  document.getElementById("customAlert").classList.remove("hidden");
 }
 
 function closeCustomAlert() {
-  document.getElementById("custom-alert").classList.add("hidden");
+  document.getElementById("customAlert").classList.add("hidden");
 }
+
 function checkPassword() {
   const input = document.getElementById("passwordInput").value.trim();
   const bgMusic = document.getElementById("bg-music");
@@ -20,26 +22,14 @@ function checkPassword() {
     bgMusic.currentTime = 0;
     new Audio("success.mp3").play();
   } else {
-    showCustomAlert();
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
-    new Audio("fail.mp3").play();
-  }
-}
-
     const failSound = new Audio("fail.mp3");
     failSound.play();
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
 
     failSound.onended = () => {
-      if (bgMusic) {
-        bgMusic.volume = 1.0;
-      }
+      showCustomAlert();
     };
-
-    // ALERT dopo l'audio, così non lo blocca
-    setTimeout(() => {
-      document.getElementById("customAlert").classList.remove("hidden");
-    }, 100);
   }
 }
 
@@ -50,7 +40,6 @@ function goBack() {
   document.getElementById("main").style.display = "block";
   document.getElementById("passwordInput").value = "";
 
-  // Riavvia la musica da capo
   if (bgMusic) {
     bgMusic.currentTime = 0;
     bgMusic.play().catch((e) => {
@@ -59,7 +48,6 @@ function goBack() {
   }
 }
 
-// 🎧 Attiva audio di sottofondo dopo interazione iniziale
 document.addEventListener('DOMContentLoaded', () => {
   const bgMusic = document.getElementById('bg-music');
 
@@ -72,16 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', enableAudio);
 });
+
+// MATRIX RAIN
 const canvas = document.getElementById("matrixRain");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
 
 const letters = "アァイィウヴエカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン0123456789".split("");
 const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = Array.from({ length: columns }, () => 1);
+const columns = Math.floor(window.innerWidth / fontSize);
+const drops = Array(columns).fill(1);
 
 function draw() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -103,8 +97,3 @@ function draw() {
 }
 
 setInterval(draw, 40);
-
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
