@@ -184,7 +184,7 @@ button:hover {
   pointer-events: none;
   background: radial-gradient(ellipse at 50% 50%, rgba(150,150,150,0.15), rgba(0,0,0,0.1) 80%);
   animation: moveFogCloud 90s linear infinite;
-  opacity: 0.95;
+  opacity: 0.25;
   z-index: 0;
   mix-blend-mode: screen;
 }
