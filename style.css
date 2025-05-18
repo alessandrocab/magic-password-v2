@@ -115,13 +115,13 @@ h1 {
 
 .input-wrapper input:focus {
   outline: none;
-  border-color: #ffc400;
+  border-color: #66ccff;
   box-shadow:
-    0 0 10px #ffcc00,
-    0 0 20px #ff9900,
-    inset 0 0 10px rgba(255, 255, 150, 0.3);
-  background-color: #fffbe6;
-  color: #2d1f00;
+    0 0 10px #88ddff,
+    0 0 20px #66ccff,
+    inset 0 0 10px rgba(180, 230, 255, 0.5);
+  background-color: #f0fbff;
+  color: #003344;
   font-weight: bold;
   letter-spacing: 0.05em;
   transition: all 0.3s ease-in-out;
