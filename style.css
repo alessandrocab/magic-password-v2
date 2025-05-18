@@ -17,7 +17,7 @@ body::before {
   content: '';
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: url('https://i.imgur.com/vb9YgeZ.png') repeat;
+  background: url('https://www.transparenttextures.com/patterns/foggy-birds.png') repeat;
   opacity: 0.25;
   animation: moveFog 60s linear infinite;
   z-index: 0;
