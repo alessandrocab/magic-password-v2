@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 0 1rem; /* Aggiunto padding orizzontale per mobile */
+  padding: 0;
   font-family: 'MedievalSharp', cursive;
   background: url('https://img.posterstore.com/zoom/wb0101-8harrypotter-thephilosophersstoneno150x70.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -9,7 +9,24 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
+  padding: 1.5rem;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://i.imgur.com/vb9YgeZ.png') repeat;
+  opacity: 0.25;
+  animation: moveFog 60s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes moveFog {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 0; }
 }
 
 .container {
@@ -24,19 +41,61 @@ body {
   position: relative;
   animation: fadeIn 1s ease-in-out;
   backdrop-filter: blur(6px);
-  margin: 2rem auto;
-  box-sizing: border-box;
+  margin: auto;
+  z-index: 1;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #ffcc00, #ff9900, #ffcc00);
+  z-index: -1;
+  animation: pulseGlow 2.5s infinite;
+  filter: blur(12px);
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
 }
 
 h1 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
+  z-index: 2;
 }
 
 .input-wrapper {
   position: relative;
   width: 100%;
   margin-bottom: 1.5rem;
+}
+
+.input-wrapper::after {
+  content: 'ᚠᚢᚦᚨᚱᛏᛁ';
+  position: absolute;
+  top: -1.6rem;
+  left: 0;
+  right: 0;
+  font-size: 1.2rem;
+  color: rgba(255, 220, 100, 0.4);
+  text-align: center;
+  letter-spacing: 0.3rem;
+  pointer-events: none;
+  animation: runesGlow 3s infinite;
+}
+
+@keyframes runesGlow {
+  0%, 100% { opacity: 0.2; text-shadow: none; }
+  50% {
+    opacity: 0.8;
+    text-shadow: 0 0 8px #ffee66, 0 0 12px #ffcc33;
+  }
 }
 
 .input-wrapper input {
@@ -115,12 +174,4 @@ button:hover {
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
-}
-
-/* Responsive fix per padding su schermi piccoli */
-@media (max-width: 480px) {
-  .container {
-    margin: 1.2rem auto;
-    padding: 2rem 1rem;
-  }
 }
