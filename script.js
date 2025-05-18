@@ -5,34 +5,18 @@ function togglePassword() {
 
 function checkPassword() {
   const input = document.getElementById("passwordInput").value.trim();
+  const bgMusic = document.getElementById("bg-music");
 
   if (input === "segreto123") {
     document.getElementById("main").style.display = "none";
     document.getElementById("revealed").style.display = "flex";
-    // Pausa background
-    document.getElementById("bg-music").pause();
+    if (bgMusic && !bgMusic.paused) {
+      bgMusic.pause();
+    }
     new Audio("success.mp3").play();
   } else {
-    const bgMusic = document.getElementById("bg-music");
-
-    // Abbassa il volume temporaneamente
-    const originalVolume = bgMusic.volume;
-    bgMusic.volume = 0.1;
-
-    const failSound = new Audio("fail.mp3");
-    failSound.play().catch((e) => {
-      console.warn("Impossibile riprodurre fail.mp3:", e);
-    });
-
-    // Dopo il fail.mp3 (es. 1.5s), riportiamo il volume originale
-    setTimeout(() => {
-      bgMusic.volume = originalVolume;
-    }, 1500);
-
-    // Mostra l'alert DOPO un leggero delay per non sovrapporsi all'audio
-    setTimeout(() => {
-      alert("Combinazione errata. Riprova.");
-    }, 300); // leggero ritardo per priorità audio
+    new Audio("fail.mp3").play();
+    alert("Combinazione errata. Riprova.");
   }
 }
 
