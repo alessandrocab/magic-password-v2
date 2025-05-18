@@ -224,15 +224,12 @@ button:hover {
 }
 .custom-alert {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  top: 0; left: 0; right: 0; bottom: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 9999;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
 }
 
 .custom-alert.hidden {
@@ -240,32 +237,12 @@ button:hover {
 }
 
 .custom-alert-box {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
   border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 100, 0, 0.5);
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  max-width: 300px;
-  width: 80%;
-  font-family: 'MedievalSharp', cursive;
-}
-
-.custom-alert-box p {
-  margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: #000;
-}
-
-.custom-alert-box button {
-  padding: 0.6rem 1.2rem;
-  border: none;
-  background-color: #5a3e91;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.custom-alert-box button:hover {
-  background-color: #3f2a6d;
+  font-family: 'MedievalSharp', cursive;
+  color: #5a3e91;
 }
