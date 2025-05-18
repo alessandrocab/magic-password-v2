@@ -83,11 +83,12 @@ h1 {
   top: -1.6rem;
   left: 0;
   right: 0;
-  font-size: 1.2rem;
-  color: rgba(255, 220, 100, 0.4);
+  font-size: 1.4rem;
+  color: rgba(255, 220, 100, 0.7);
   text-align: center;
   letter-spacing: 0.3rem;
   pointer-events: none;
+  text-shadow: 0 0 4px #ffeb70, 0 0 10px #ffcc33; /* aggiunto bagliore */
   animation: runesGlow 3s infinite;
 }
 
