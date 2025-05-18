@@ -36,8 +36,8 @@ body::before {
   text-align: center;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 0 18px rgba(255, 200, 50, 0.3), 0 0 30px rgba(255, 100, 0, 0.2);
-  border: 4px solid rgba(140, 90, 10, 0.4);
+  box-shadow: 0 0 18px rgba(100, 200, 255, 0.3), 0 0 30px rgba(50, 150, 255, 0.2);
+  border: 4px solid rgba(50, 150, 200, 0.4);
   position: relative;
   animation: fadeIn 1s ease-in-out;
   backdrop-filter: blur(6px);
@@ -53,11 +53,11 @@ body::before {
   right: -6px;
   bottom: -6px;
   border-radius: 20px;
-  background: linear-gradient(45deg, #ffe080, #ffb347, #ffe080);
+  background: linear-gradient(45deg, #a0e7ff, #70cfff, #a0e7ff);
   z-index: -1;
   animation: pulseGlow 3s infinite;
   filter: blur(10px);
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 @keyframes pulseGlow {
