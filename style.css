@@ -92,11 +92,11 @@ h1 {
   left: 0;
   right: 0;
   font-size: 1.4rem;
-  color: rgba(255, 220, 100, 0.4);
+  color: rgba(255, 220, 100, 0.9);
   text-align: center;
   letter-spacing: 0.3rem;
   pointer-events: none;
-  text-shadow: 0 0 4px #ffeb70, 0 0 7px #ffcc33;
+  text-shadow: 0 0 4px #ffeb70, 0 0 12px #ffcc33;
   animation: runesGlow 3s infinite;
 }
 
