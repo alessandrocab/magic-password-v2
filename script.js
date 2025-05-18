@@ -26,6 +26,9 @@ function checkPassword() {
     bgMusic.pause();
     bgMusic.currentTime = 0;
     new Audio("fail.mp3").play(); // Audio in contemporanea
+    bgMusic.play().catch(() => {
+  console.log("Autoplay bloccato");
+      });
   }
 }
 
