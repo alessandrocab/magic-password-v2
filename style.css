@@ -54,11 +54,11 @@ body::before {
   right: -6px;
   bottom: -6px;
   border-radius: 20px;
-  background: linear-gradient(120deg, #d2faff, #b8d9ff, #e5f4ff);
+  background: linear-gradient(120deg, #a0e7ff, #70cfff, #a0e7ff);
   z-index: -1;
   animation: pulseGlow 4s infinite ease-in-out;
-  filter: blur(6px);
-  opacity: 0.25;
+  filter: blur(8px);
+  opacity: 0.3;
 }
 
 @keyframes pulseGlow {
@@ -92,11 +92,11 @@ h1 {
   left: 0;
   right: 0;
   font-size: 1.4rem;
-  color: rgba(255, 220, 100, 0.9);
+  color: rgba(255, 220, 100, 0.85);
   text-align: center;
   letter-spacing: 0.3rem;
   pointer-events: none;
-  text-shadow: 0 0 4px #ffeb70, 0 0 12px #ffcc33;
+  text-shadow: 0 0 4px #ffeb70, 0 0 10px #ffcc33, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   animation: runesGlow 3s infinite;
 }
 
