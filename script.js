@@ -76,8 +76,10 @@ function draw() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#0F0";
-  ctx.font = `${fontSize}px monospace`;
+  ctx.fillStyle = "#00ff88"; // Colore verde acceso con un po' di blu
+ctx.shadowColor = "#00ff88";
+ctx.shadowBlur = 5;
+ctx.font = `bold ${fontSize}px monospace`;
 
   for (let i = 0; i < drops.length; i++) {
     const text = letters[Math.floor(Math.random() * letters.length)];
