@@ -2,7 +2,13 @@ function togglePassword() {
   const input = document.getElementById("passwordInput");
   input.type = input.type === "password" ? "text" : "password";
 }
+function showCustomAlert() {
+  document.getElementById("custom-alert").classList.remove("hidden");
+}
 
+function closeCustomAlert() {
+  document.getElementById("custom-alert").classList.add("hidden");
+}
 function checkPassword() {
   const input = document.getElementById("passwordInput").value.trim();
   const bgMusic = document.getElementById("bg-music");
@@ -10,17 +16,16 @@ function checkPassword() {
   if (input === "segreto123") {
     document.getElementById("main").style.display = "none";
     document.getElementById("revealed").style.display = "flex";
-
-    if (bgMusic) {
-      bgMusic.pause();
-    }
-
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
     new Audio("success.mp3").play();
   } else {
-    // Abbassa il volume della musica e suona subito fail.mp3
-    if (bgMusic && !bgMusic.paused) {
-      bgMusic.volume = 0.1;
-    }
+    showCustomAlert();
+    bgMusic.pause();
+    bgMusic.currentTime = 0;
+    new Audio("fail.mp3").play();
+  }
+}
 
     const failSound = new Audio("fail.mp3");
     failSound.play();
@@ -33,7 +38,7 @@ function checkPassword() {
 
     // ALERT dopo l'audio, così non lo blocca
     setTimeout(() => {
-      alert("❌ Combinazione errata ❌");
+      document.getElementById("customAlert").classList.remove("hidden");
     }, 100);
   }
 }
