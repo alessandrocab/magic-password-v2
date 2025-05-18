@@ -11,13 +11,13 @@ function checkPassword() {
     document.getElementById("main").style.display = "none";
     document.getElementById("revealed").style.display = "flex";
 
-    if (bgMusic && !bgMusic.paused) {
+    if (bgMusic) {
       bgMusic.pause();
     }
 
     new Audio("success.mp3").play();
   } else {
-    // Abbassa il volume della musica di sottofondo temporaneamente
+    // Abbassa il volume della musica e suona subito fail.mp3
     if (bgMusic && !bgMusic.paused) {
       bgMusic.volume = 0.1;
     }
@@ -26,13 +26,15 @@ function checkPassword() {
     failSound.play();
 
     failSound.onended = () => {
-      // Ripristina il volume dopo il fail
       if (bgMusic) {
         bgMusic.volume = 1.0;
       }
     };
 
-    alert("Combinazione errata. Riprova.");
+    // ALERT dopo l'audio, così non lo blocca
+    setTimeout(() => {
+      alert("Combinazione errata. Riprova.");
+    }, 100);
   }
 }
 
@@ -43,21 +45,22 @@ function goBack() {
   document.getElementById("main").style.display = "block";
   document.getElementById("passwordInput").value = "";
 
-  // Riparte la musica di sottofondo se era stata messa in pausa
-  if (bgMusic && bgMusic.paused) {
+  // Riavvia la musica da capo
+  if (bgMusic) {
+    bgMusic.currentTime = 0;
     bgMusic.play().catch((e) => {
       console.log("Audio bloccato, attendi un'interazione.");
     });
   }
 }
 
-// 🎧 Attiva audio di sottofondo dopo interazione
+// 🎧 Attiva audio di sottofondo dopo interazione iniziale
 document.addEventListener('DOMContentLoaded', () => {
   const bgMusic = document.getElementById('bg-music');
-  
+
   function enableAudio() {
-    bgMusic.play().catch((e) => {
-      console.log("Autoplay bloccato, attesa interazione");
+    bgMusic.play().catch(() => {
+      console.log("Autoplay bloccato");
     });
     document.removeEventListener('click', enableAudio);
   }
