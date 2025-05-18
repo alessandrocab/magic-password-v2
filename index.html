@@ -9,11 +9,11 @@
 </head>
 <body>
   <canvas id="matrixRain"></canvas>
-  <!-- Audio in loop -->
   <audio id="bg-music" src="background.mp3" autoplay loop></audio>
+
   <div class="fog-layer fog-back"></div>
-<div class="fog-layer fog-front"></div>
-<div class="fog"></div>
+  <div class="fog-layer fog-front"></div>
+
   <div class="container" id="main">
     <h1>Inserisci la combinazione corretta</h1>
     <div class="input-wrapper">
@@ -27,14 +27,15 @@
     <div class="magic-text">✨ Hai scoperto il luogo segreto! ✨</div>
     <button style="margin-top: 30px;" onclick="goBack()">⬅ Torna indietro</button>
   </div>
-<!-- Modale personalizzato per combinazione errata -->
-  <div id="customAlert" class="custom-alert hidden">
+
+  <!-- Alert personalizzato -->
+  <div id="custom-alert" class="custom-alert hidden">
     <div class="custom-alert-box">
       <p>Combinazione errata</p>
       <button onclick="closeCustomAlert()">OK</button>
     </div>
   </div>
+
   <script src="script.js"></script>
-<audio id="bg-music" src="background.mp3" loop></audio>
 </body>
 </html>
