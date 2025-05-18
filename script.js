@@ -33,7 +33,7 @@ function checkPassword() {
 
     // ALERT dopo l'audio, così non lo blocca
     setTimeout(() => {
-      alert("Combinazione errata. Riprova.");
+      alert("❌ Combinazione errata ❌");
     }, 100);
   }
 }
