@@ -22,13 +22,20 @@ function checkPassword() {
     bgMusic.currentTime = 0;
     new Audio("success.mp3").play();
   } else {
-    showCustomAlert(); // Mostra subito l'alert
+    showCustomAlert();
     bgMusic.pause();
-    bgMusic.currentTime = 0;
-    new Audio("fail.mp3").play(); // Audio in contemporanea
-    bgMusic.play().catch(() => {
-  console.log("Autoplay bloccato");
+
+    const failAudio = new Audio("fail.mp3");
+    failAudio.play().catch(() => {
+      console.log("Errore nella riproduzione dell'audio.");
+    });
+
+    failAudio.addEventListener("ended", () => {
+      bgMusic.currentTime = 0;
+      bgMusic.play().catch(() => {
+        console.log("Autoplay bloccato");
       });
+    });
   }
 }
 
@@ -76,10 +83,10 @@ function draw() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#00ff88"; // Colore verde acceso con un po' di blu
-ctx.shadowColor = "#00ff88";
-ctx.shadowBlur = 5;
-ctx.font = `bold ${fontSize}px monospace`;
+  ctx.fillStyle = "#00ff88";
+  ctx.shadowColor = "#00ff88";
+  ctx.shadowBlur = 5;
+  ctx.font = `bold ${fontSize}px monospace`;
 
   for (let i = 0; i < drops.length; i++) {
     const text = letters[Math.floor(Math.random() * letters.length)];
