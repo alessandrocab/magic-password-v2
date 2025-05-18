@@ -4,11 +4,11 @@ function togglePassword() {
 }
 
 function showCustomAlert() {
-  document.getElementById("customAlert").classList.remove("hidden");
+  document.getElementById("custom-alert").classList.remove("hidden");
 }
 
 function closeCustomAlert() {
-  document.getElementById("customAlert").classList.add("hidden");
+  document.getElementById("custom-alert").classList.add("hidden");
 }
 
 function checkPassword() {
@@ -22,14 +22,11 @@ function checkPassword() {
     bgMusic.currentTime = 0;
     new Audio("success.mp3").play();
   } else {
-    const failSound = new Audio("fail.mp3");
-    failSound.play();
+    showCustomAlert();
     bgMusic.pause();
     bgMusic.currentTime = 0;
-
-    failSound.onended = () => {
-      showCustomAlert();
-    };
+    const failSound = new Audio("fail.mp3");
+    failSound.play();
   }
 }
 
@@ -65,17 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
 const canvas = document.getElementById("matrixRain");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 const letters = "アァイィウヴエカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワン0123456789".split("");
 const fontSize = 14;
-const columns = Math.floor(window.innerWidth / fontSize);
-const drops = Array(columns).fill(1);
+const columns = canvas.width / fontSize;
+const drops = Array.from({ length: columns }, () => 1);
 
 function draw() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
@@ -97,3 +90,8 @@ function draw() {
 }
 
 setInterval(draw, 40);
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
