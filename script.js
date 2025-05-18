@@ -22,11 +22,10 @@ function checkPassword() {
     bgMusic.currentTime = 0;
     new Audio("success.mp3").play();
   } else {
-    showCustomAlert();
+    showCustomAlert(); // Mostra subito l'alert
     bgMusic.pause();
     bgMusic.currentTime = 0;
-    const failSound = new Audio("fail.mp3");
-    failSound.play();
+    new Audio("fail.mp3").play(); // Riproduce il suono in contemporanea
   }
 }
 
