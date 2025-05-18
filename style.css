@@ -185,19 +185,19 @@ button:hover {
   pointer-events: none;
   background: radial-gradient(circle at 50% 50%, rgba(200, 200, 200, 0.2), rgba(60, 60, 60, 0.12), rgba(0, 0, 0, 0) 70%);
   opacity: 0.6;
-  mix-blend-mode: screen;
+  mix-blend-mode: overlay;
   z-index: 2;
 }
 
 .fog-back {
   animation: moveFogBack 80s linear infinite;
-  opacity: 0.45;
+  opacity: 0.7;
   z-index: 2;
 }
 
 .fog-front {
   animation: moveFogFront 45s linear infinite;
-  opacity: 0.7;
+  opacity: 0.9;
   z-index: 2;
 }
 
