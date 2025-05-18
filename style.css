@@ -54,16 +54,24 @@ body::before {
   right: -6px;
   bottom: -6px;
   border-radius: 20px;
-  background: linear-gradient(45deg, #a0e7ff, #70cfff, #a0e7ff);
+  background: linear-gradient(120deg, #d2faff, #b8d9ff, #e5f4ff);
   z-index: -1;
-  animation: pulseGlow 3s infinite;
+  animation: pulseGlow 4s infinite ease-in-out;
   filter: blur(6px);
-  opacity: 0.4;
+  opacity: 0.25;
 }
 
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.6; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.03); }
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+    filter: blur(4px);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.015);
+    filter: blur(7px);
+  }
 }
 
 h1 {
