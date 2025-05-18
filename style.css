@@ -182,9 +182,9 @@ button:hover {
   width: 300%;
   height: 300%;
   pointer-events: none;
-  background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.12), rgba(0,0,0,0.1) 80%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(150,150,150,0.15), rgba(0,0,0,0.1) 80%);
   animation: moveFogCloud 90s linear infinite;
-  opacity: 0.55;
+  opacity: 0.65;
   z-index: 0;
   mix-blend-mode: screen;
 }
