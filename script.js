@@ -1,4 +1,4 @@
-function togglePassword() { 
+function togglePassword() {
   const input = document.getElementById("passwordInput");
   input.type = input.type === "password" ? "text" : "password";
 }
@@ -22,10 +22,10 @@ function checkPassword() {
     bgMusic.currentTime = 0;
     new Audio("success.mp3").play();
   } else {
-    showCustomAlert();
+    showCustomAlert(); // Mostra subito l'alert
     bgMusic.pause();
     bgMusic.currentTime = 0;
-    new Audio("fail.mp3").play();
+    new Audio("fail.mp3").play(); // Audio in contemporanea
   }
 }
 
@@ -38,7 +38,7 @@ function goBack() {
 
   if (bgMusic) {
     bgMusic.currentTime = 0;
-    bgMusic.play().catch((e) => {
+    bgMusic.play().catch(() => {
       console.log("Audio bloccato, attendi un'interazione.");
     });
   }
